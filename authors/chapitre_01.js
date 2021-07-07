@@ -58,12 +58,36 @@ app.get('/json/authors/:id', (req, res) => {
 app.get('/json/authors/:id/books', (req, res) => {
     let index = req.params.id - 1;
     let author = authors[index].books;
-    
+
 
     res.json({
         author,
     });
 });
+
+//de façon dynamique//
+/////////////////////////
+// app.get('/json/authors/:id',(req, res) =>{
+//     var id = req.params.id-1
+//     var author = authors[id];
+
+//     res.json({
+//         name: author.name,
+//         nationality: author.nationality,
+//     });
+    
+// });
+
+
+// app.get('/json/authors/:id/books',(req, res) =>{
+//     var id = req.params.id-1
+//     var author = authors[id];
+
+//     res.json({
+//         books: author.books,
+//     });
+    
+// });
 
 app.listen(port, () => {
     console.log('Server app listening on port ' + port);

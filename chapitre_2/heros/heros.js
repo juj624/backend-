@@ -1,4 +1,3 @@
-const { Router } = require("express");
 const express = require("express");
 const app = express();
 const PORT = 8000;
@@ -44,18 +43,12 @@ app.use(mid);
 app.get('/heroes', (req, res) => {
     res.json({
         name: heroes.name,
-        power: heroes.power,
-        color: heroes.color,
-        isAlive: false,
-        age: 30,
-        image: "https://aws.vdkimg.com/film/2/5/1/1/251170_backdrop_scale_1280xauto.jpg"
-
     })
 })
 
 app.get('/heroes/:name', (req, res) => {
     res.json({
-        name: heroes.name,
+
     })
 })
 

@@ -4,8 +4,9 @@ const PORT = 8000;
 const hotelRouter = require('./router/hotelRouter');
 const restaurantRouter = require('./router/restaurantRouter');
 
+app.use(express.json());
+
 app.use('/hotels', hotelRouter);
-app.use('/hotels/:id', hotelRouter);
 
 
 

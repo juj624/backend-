@@ -47,15 +47,36 @@ const getHotel = (_req, res) => {
 }
 
 const getBuyHotel = (req, res) => {
-    const objHotel = req.params.id
+    const id = req.params.id
     res.json({
-        data: hotels[objHotel - 1]
+        data: hotels[id - 1]
     });
-}
+};
 
+const addHotel = (req, res) => {
+    let body = req.body
+    hotels.push(body);
+    res.json({
+        status: 'ok',
+        data: hotels,
+    });
+};
+
+const changeHotel = (req, res) => {
+    const name = req.query.name
+    const id = req.params.id
+    let index = hotels.findIndex(element => element.id === id)
+    console.log(index);
+    res.json({
+        status: 'ok',
+        data: hotels,
+    })
+};
 
 
 module.exports = {
     getHotel: getHotel,
     getBuyHotel: getBuyHotel,
+    addHotel: addHotel,
+    changeHotel: changeHotel,
 };

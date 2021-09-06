@@ -12,5 +12,7 @@ router.post('/', hotelController.addHotel);
 
 router.put('/:id', hotelController.changeHotel)
 
+router.delete('/:id', hotelController.deleteHotel)
+
 
 module.exports = router;

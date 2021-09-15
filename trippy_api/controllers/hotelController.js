@@ -39,6 +39,7 @@ const hotels = [
     }
 ];
 
+
 const getHotel = (_req, res) => {
     res.json({
         status: 'ok',
@@ -92,7 +93,7 @@ const deleteHotel = (req, res) => {
     });
 };
 
-
+// export des modules vers le router !
 module.exports = {
     getHotel: getHotel,
     getBuyHotel: getBuyHotel,
